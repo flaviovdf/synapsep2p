@@ -1,0 +1,3 @@
+[2006/8/11 22:43:44:875] INFO synapse.server.ServerFacade.config() ===> Proxy was successfully binded.
+[2006/8/11 22:43:45:15] DEBUG synapse.server.ConnectionManager.config() ===> The Terminal was successfullt binded.
+[2006/8/11 22:43:45:31] INFO synapse.server.ServerFacade.startEventProcessor() ===> The EventProcessor was successfully started.

@@ -1,0 +1,27 @@
+#!/bin/bash
+
+# Looks for the root dir
+
+findsynapsedir() {
+
+	PRG="$0"
+
+	while [ -h "$PRG" ]; do
+		ls=`ls -ld "$PRG"`
+		link=`expr "$ls" : '.*-> \(.*\)$'`
+		if expr "$link" : '.*/.*' > /dev/null; then
+			PRG="$link"
+		else
+			PRG=`dirname "$PRG"`/"$link"
+		fi
+	done
+	
+	PRGDIR=`dirname "$PRG"`
+	SYNAPSE_DIR=`cd "$PRGDIR/.." ; pwd`
+}
+
+# Execute
+
+findsynapsedir
+
+java -DSYNAPSE_DIR=$SYNAPSE_DIR -cp $SYNAPSE_DIR/classes:$SYNAPSE_DIR/lib/yal.jar:$SYNAPSE_DIR/lib/fast-md5.jar synapse.client.ui.gui.RunGUI &

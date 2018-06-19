@@ -1,0 +1,1189 @@
+package synapse.client;
+
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Set;
+
+import synapse.client.manager.ReplyManager;
+import synapse.client.manager.RequestIDDoesntExistException;
+
+/**
+ * 
+ * 
+ * @author <p>Joao Arthur Brunet Monteiro, jarthur@dsc.ufcg.edu.br</p>
+ * @author <p>Flavio Vinicius Diniz de Figueiredo, 
+flaviov@lcc.ufcg.edu.br</p>
+ */
+public class UITranslator {
+	
+	private TransferCore transferCore;
+	private ReplyManager replyManager;
+	
+	public UITranslator () {
+		this.replyManager = ReplyManager.startReplyManager();
+		this.transferCore = new TransferCore();
+	}
+	
+	/**
+	 * Lists a result from a search according to he Search ID.
+	 * 
+	 * @param id The ID of the search.
+	 * @return A string representation of the result.
+	 */
+	public String listResult (long id) {
+		String feedBack = ""; 
+		try {
+			Map map = this.replyManager.getSearchResult(id);
+			Set set = map.keySet();
+			Iterator it = set.iterator();
+			int index = 0;
+			while (it.hasNext()) {
+				String temp = (String)it.next();
+				feedBack = (index++)+" "+temp+" 
+"+map.get(temp);					
+			}
+			return feedBack;
+		} catch (RequestIDDoesntExistException e) {
+			System.out.println(e);
+		}
+		return "";
+	}
+	
+	public void search(String fileName) {
+		
+	}
+	
+	public String listUploads () {
+		return "";
+	}
+	
+	public String listDownloads () {
+		return "";
+	}
+	
+	public void downloadFile (int downloadIndex) {
+		
+	}
+	
+	public void pauseDownload (int downloadIndex) {
+		
+	}
+	
+	public void resumeDownload (int downloadIndex) {
+		
+	}
+	
+	public void cancelDownload (int downloadIndex) {
+		
+	}
+	
+	public void cancelUpload (int uploadIndex) {
+		
+	}
+}
+
+thi is how the ui translator used to look like! LALA!
+
+
+package synapse.client;
+
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Set;
+
+import synapse.client.manager.ReplyManager;
+import synapse.client.manager.RequestIDDoesntExistException;
+
+/**
+ * 
+ * 
+ * @author <p>Joao Arthur Brunet Monteiro, jarthur@dsc.ufcg.edu.br</p>
+ * @author <p>Flavio Vinicius Diniz de Figueiredo, 
+flaviov@lcc.ufcg.edu.br</p>
+ */
+public class UITranslator {
+	
+	private TransferCore transferCore;
+	private ReplyManager replyManager;
+	
+	public UITranslator () {
+		this.replyManager = ReplyManager.startReplyManager();
+		this.transferCore = new TransferCore();
+	}
+	
+	/**
+	 * Lists a result from a search according to he Search ID.
+	 * 
+	 * @param id The ID of the search.
+	 * @return A string representation of the result.
+	 */
+	public String listResult (long id) {
+		String feedBack = ""; 
+		try {
+			Map map = this.replyManager.getSearchResult(id);
+			Set set = map.keySet();
+			Iterator it = set.iterator();
+			int index = 0;
+			while (it.hasNext()) {
+				String temp = (String)it.next();
+				feedBack = (index++)+" "+temp+" 
+"+map.get(temp);					
+			}
+			return feedBack;
+		} catch (RequestIDDoesntExistException e) {
+			System.out.println(e);
+		}
+		return "";
+	}
+	
+	public void search(String fileName) {
+		
+	}
+	
+	public String listUploads () {
+		return "";
+	}
+	
+	public String listDownloads () {
+		return "";
+	}
+	
+	public void downloadFile (int downloadIndex) {
+		
+	}
+	
+	public void pauseDownload (int downloadIndex) {
+		
+	}
+	
+	public void resumeDownload (int downloadIndex) {
+		
+	}
+	
+	public void cancelDownload (int downloadIndex) {
+		
+	}
+	
+	public void cancelUpload (int uploadIndex) {
+		
+	}
+}
+
+thi is how the ui translator used to look like! LALA!
+
+
+
+package synapse.client;
+
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Set;
+
+import synapse.client.manager.ReplyManager;
+import synapse.client.manager.RequestIDDoesntExistException;
+
+/**
+ * 
+ * 
+ * @author <p>Joao Arthur Brunet Monteiro, jarthur@dsc.ufcg.edu.br</p>
+ * @author <p>Flavio Vinicius Diniz de Figueiredo, 
+flaviov@lcc.ufcg.edu.br</p>
+ */
+public class UITranslator {
+	
+	private TransferCore transferCore;
+	private ReplyManager replyManager;
+	
+	public UITranslator () {
+		this.replyManager = ReplyManager.startReplyManager();
+		this.transferCore = new TransferCore();
+	}
+	
+	/**
+	 * Lists a result from a search according to he Search ID.
+	 * 
+	 * @param id The ID of the search.
+	 * @return A string representation of the result.
+	 */
+	public String listResult (long id) {
+		String feedBack = ""; 
+		try {
+			Map map = this.replyManager.getSearchResult(id);
+			Set set = map.keySet();
+			Iterator it = set.iterator();
+			int index = 0;
+			while (it.hasNext()) {
+				String temp = (String)it.next();
+				feedBack = (index++)+" "+temp+" 
+"+map.get(temp);					
+			}
+			return feedBack;
+		} catch (RequestIDDoesntExistException e) {
+			System.out.println(e);
+		}
+		return "";
+	}
+	
+	public void search(String fileName) {
+		
+	}
+	
+	public String listUploads () {
+		return "";
+	}
+	
+	public String listDownloads () {
+		return "";
+	}
+	
+	public void downloadFile (int downloadIndex) {
+		
+	}
+	
+	public void pauseDownload (int downloadIndex) {
+		
+	}
+	
+	public void resumeDownload (int downloadIndex) {
+		
+	}
+	
+	public void cancelDownload (int downloadIndex) {
+		
+	}
+	
+	public void cancelUpload (int uploadIndex) {
+		
+	}
+}
+
+thi is how the ui translator used to look like! LALA!
+
+
+
+package synapse.client;
+
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Set;
+
+import synapse.client.manager.ReplyManager;
+import synapse.client.manager.RequestIDDoesntExistException;
+
+/**
+ * 
+ * 
+ * @author <p>Joao Arthur Brunet Monteiro, jarthur@dsc.ufcg.edu.br</p>
+ * @author <p>Flavio Vinicius Diniz de Figueiredo, 
+flaviov@lcc.ufcg.edu.br</p>
+ */
+public class UITranslator {
+	
+	private TransferCore transferCore;
+	private ReplyManager replyManager;
+	
+	public UITranslator () {
+		this.replyManager = ReplyManager.startReplyManager();
+		this.transferCore = new TransferCore();
+	}
+	
+	/**
+	 * Lists a result from a search according to he Search ID.
+	 * 
+	 * @param id The ID of the search.
+	 * @return A string representation of the result.
+	 */
+	public String listResult (long id) {
+		String feedBack = ""; 
+		try {
+			Map map = this.replyManager.getSearchResult(id);
+			Set set = map.keySet();
+			Iterator it = set.iterator();
+			int index = 0;
+			while (it.hasNext()) {
+				String temp = (String)it.next();
+				feedBack = (index++)+" "+temp+" 
+"+map.get(temp);					
+			}
+			return feedBack;
+		} catch (RequestIDDoesntExistException e) {
+			System.out.println(e);
+		}
+		return "";
+	}
+	
+	public void search(String fileName) {
+		
+	}
+	
+	public String listUploads () {
+		return "";
+	}
+	
+	public String listDownloads () {
+		return "";
+	}
+	
+	public void downloadFile (int downloadIndex) {
+		
+	}
+	
+	public void pauseDownload (int downloadIndex) {
+		
+	}
+	
+	public void resumeDownload (int downloadIndex) {
+		
+	}
+	
+	public void cancelDownload (int downloadIndex) {
+		
+	}
+	
+	public void cancelUpload (int uploadIndex) {
+		
+	}
+}
+
+thi is how the ui translator used to look like! LALA!
+
+
+package synapse.client;
+
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Set;
+
+import synapse.client.manager.ReplyManager;
+import synapse.client.manager.RequestIDDoesntExistException;
+
+/**
+ * 
+ * 
+ * @author <p>Joao Arthur Brunet Monteiro, jarthur@dsc.ufcg.edu.br</p>
+ * @author <p>Flavio Vinicius Diniz de Figueiredo, 
+flaviov@lcc.ufcg.edu.br</p>
+ */
+public class UITranslator {
+	
+	private TransferCore transferCore;
+	private ReplyManager replyManager;
+	
+	public UITranslator () {
+		this.replyManager = ReplyManager.startReplyManager();
+		this.transferCore = new TransferCore();
+	}
+	
+	/**
+	 * Lists a result from a search according to he Search ID.
+	 * 
+	 * @param id The ID of the search.
+	 * @return A string representation of the result.
+	 */
+	public String listResult (long id) {
+		String feedBack = ""; 
+		try {
+			Map map = this.replyManager.getSearchResult(id);
+			Set set = map.keySet();
+			Iterator it = set.iterator();
+			int index = 0;
+			while (it.hasNext()) {
+				String temp = (String)it.next();
+				feedBack = (index++)+" "+temp+" 
+"+map.get(temp);					
+			}
+			return feedBack;
+		} catch (RequestIDDoesntExistException e) {
+			System.out.println(e);
+		}
+		return "";
+	}
+	
+	public void search(String fileName) {
+		
+	}
+	
+	public String listUploads () {
+		return "";
+	}
+	
+	public String listDownloads () {
+		return "";
+	}
+	
+	public void downloadFile (int downloadIndex) {
+		
+	}
+	
+	public void pauseDownload (int downloadIndex) {
+		
+	}
+	
+	public void resumeDownload (int downloadIndex) {
+		
+	}
+	
+	public void cancelDownload (int downloadIndex) {
+		
+	}
+	
+	public void cancelUpload (int uploadIndex) {
+		
+	}
+}
+
+thi is how the ui translator used to look like! LALA!
+
+
+package synapse.client;
+
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Set;
+
+import synapse.client.manager.ReplyManager;
+import synapse.client.manager.RequestIDDoesntExistException;
+
+/**
+ * 
+ * 
+ * @author <p>Joao Arthur Brunet Monteiro, jarthur@dsc.ufcg.edu.br</p>
+ * @author <p>Flavio Vinicius Diniz de Figueiredo, 
+flaviov@lcc.ufcg.edu.br</p>
+ */
+public class UITranslator {
+	
+	private TransferCore transferCore;
+	private ReplyManager replyManager;
+	
+	public UITranslator () {
+		this.replyManager = ReplyManager.startReplyManager();
+		this.transferCore = new TransferCore();
+	}
+	
+	/**
+	 * Lists a result from a search according to he Search ID.
+	 * 
+	 * @param id The ID of the search.
+	 * @return A string representation of the result.
+	 */
+	public String listResult (long id) {
+		String feedBack = ""; 
+		try {
+			Map map = this.replyManager.getSearchResult(id);
+			Set set = map.keySet();
+			Iterator it = set.iterator();
+			int index = 0;
+			while (it.hasNext()) {
+				String temp = (String)it.next();
+				feedBack = (index++)+" "+temp+" 
+"+map.get(temp);					
+			}
+			return feedBack;
+		} catch (RequestIDDoesntExistException e) {
+			System.out.println(e);
+		}
+		return "";
+	}
+	
+	public void search(String fileName) {
+		
+	}
+	
+	public String listUploads () {
+		return "";
+	}
+	
+	public String listDownloads () {
+		return "";
+	}
+	
+	public void downloadFile (int downloadIndex) {
+		
+	}
+	
+	public void pauseDownload (int downloadIndex) {
+		
+	}
+	
+	public void resumeDownload (int downloadIndex) {
+		
+	}
+	
+	public void cancelDownload (int downloadIndex) {
+		
+	}
+	
+	public void cancelUpload (int uploadIndex) {
+		
+	}
+}
+
+thi is how the ui translator used to look like! LALA!
+
+
+package synapse.client;
+
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Set;
+
+import synapse.client.manager.ReplyManager;
+import synapse.client.manager.RequestIDDoesntExistException;
+
+/**
+ * 
+ * 
+ * @author <p>Joao Arthur Brunet Monteiro, jarthur@dsc.ufcg.edu.br</p>
+ * @author <p>Flavio Vinicius Diniz de Figueiredo, 
+flaviov@lcc.ufcg.edu.br</p>
+ */
+public class UITranslator {
+	
+	private TransferCore transferCore;
+	private ReplyManager replyManager;
+	
+	public UITranslator () {
+		this.replyManager = ReplyManager.startReplyManager();
+		this.transferCore = new TransferCore();
+	}
+	
+	/**
+	 * Lists a result from a search according to he Search ID.
+	 * 
+	 * @param id The ID of the search.
+	 * @return A string representation of the result.
+	 */
+	public String listResult (long id) {
+		String feedBack = ""; 
+		try {
+			Map map = this.replyManager.getSearchResult(id);
+			Set set = map.keySet();
+			Iterator it = set.iterator();
+			int index = 0;
+			while (it.hasNext()) {
+				String temp = (String)it.next();
+				feedBack = (index++)+" "+temp+" 
+"+map.get(temp);					
+			}
+			return feedBack;
+		} catch (RequestIDDoesntExistException e) {
+			System.out.println(e);
+		}
+		return "";
+	}
+	
+	public void search(String fileName) {
+		
+	}
+	
+	public String listUploads () {
+		return "";
+	}
+	
+	public String listDownloads () {
+		return "";
+	}
+	
+	public void downloadFile (int downloadIndex) {
+		
+	}
+	
+	public void pauseDownload (int downloadIndex) {
+		
+	}
+	
+	public void resumeDownload (int downloadIndex) {
+		
+	}
+	
+	public void cancelDownload (int downloadIndex) {
+		
+	}
+	
+	public void cancelUpload (int uploadIndex) {
+		
+	}
+}
+
+thi is how the ui translator used to look like! LALA!
+
+
+package synapse.client;
+
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Set;
+
+import synapse.client.manager.ReplyManager;
+import synapse.client.manager.RequestIDDoesntExistException;
+
+/**
+ * 
+ * 
+ * @author <p>Joao Arthur Brunet Monteiro, jarthur@dsc.ufcg.edu.br</p>
+ * @author <p>Flavio Vinicius Diniz de Figueiredo, 
+flaviov@lcc.ufcg.edu.br</p>
+ */
+public class UITranslator {
+	
+	private TransferCore transferCore;
+	private ReplyManager replyManager;
+	
+	public UITranslator () {
+		this.replyManager = ReplyManager.startReplyManager();
+		this.transferCore = new TransferCore();
+	}
+	
+	/**
+	 * Lists a result from a search according to he Search ID.
+	 * 
+	 * @param id The ID of the search.
+	 * @return A string representation of the result.
+	 */
+	public String listResult (long id) {
+		String feedBack = ""; 
+		try {
+			Map map = this.replyManager.getSearchResult(id);
+			Set set = map.keySet();
+			Iterator it = set.iterator();
+			int index = 0;
+			while (it.hasNext()) {
+				String temp = (String)it.next();
+				feedBack = (index++)+" "+temp+" 
+"+map.get(temp);					
+			}
+			return feedBack;
+		} catch (RequestIDDoesntExistException e) {
+			System.out.println(e);
+		}
+		return "";
+	}
+	
+	public void search(String fileName) {
+		
+	}
+	
+	public String listUploads () {
+		return "";
+	}
+	
+	public String listDownloads () {
+		return "";
+	}
+	
+	public void downloadFile (int downloadIndex) {
+		
+	}
+	
+	public void pauseDownload (int downloadIndex) {
+		
+	}
+	
+	public void resumeDownload (int downloadIndex) {
+		
+	}
+	
+	public void cancelDownload (int downloadIndex) {
+		
+	}
+	
+	public void cancelUpload (int uploadIndex) {
+		
+	}
+}
+
+thi is how the ui translator used to look like! LALA!
+
+
+package synapse.client;
+
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Set;
+
+import synapse.client.manager.ReplyManager;
+import synapse.client.manager.RequestIDDoesntExistException;
+
+/**
+ * 
+ * 
+ * @author <p>Joao Arthur Brunet Monteiro, jarthur@dsc.ufcg.edu.br</p>
+ * @author <p>Flavio Vinicius Diniz de Figueiredo, 
+flaviov@lcc.ufcg.edu.br</p>
+ */
+public class UITranslator {
+	
+	private TransferCore transferCore;
+	private ReplyManager replyManager;
+	
+	public UITranslator () {
+		this.replyManager = ReplyManager.startReplyManager();
+		this.transferCore = new TransferCore();
+	}
+	
+	/**
+	 * Lists a result from a search according to he Search ID.
+	 * 
+	 * @param id The ID of the search.
+	 * @return A string representation of the result.
+	 */
+	public String listResult (long id) {
+		String feedBack = ""; 
+		try {
+			Map map = this.replyManager.getSearchResult(id);
+			Set set = map.keySet();
+			Iterator it = set.iterator();
+			int index = 0;
+			while (it.hasNext()) {
+				String temp = (String)it.next();
+				feedBack = (index++)+" "+temp+" 
+"+map.get(temp);					
+			}
+			return feedBack;
+		} catch (RequestIDDoesntExistException e) {
+			System.out.println(e);
+		}
+		return "";
+	}
+	
+	public void search(String fileName) {
+		
+	}
+	
+	public String listUploads () {
+		return "";
+	}
+	
+	public String listDownloads () {
+		return "";
+	}
+	
+	public void downloadFile (int downloadIndex) {
+		
+	}
+	
+	public void pauseDownload (int downloadIndex) {
+		
+	}
+	
+	public void resumeDownload (int downloadIndex) {
+		
+	}
+	
+	public void cancelDownload (int downloadIndex) {
+		
+	}
+	
+	public void cancelUpload (int uploadIndex) {
+		
+	}
+}
+
+thi is how the ui 	while (it.hasNext()) {
+				String temp = (String)it.next();
+				feedBack = (index++)+" "+temp+" 
+"+map.get(temp);					
+			}
+			return feedBack;
+		} catch (RequestIDDoesntExistException e) {
+			System.out.println(e);
+		}
+		return "";
+	}
+	
+	public void search(String fileName) {
+		
+	}
+	
+	public String listUploads () {
+		return "";
+	}
+	
+	public String listDownloads () {
+		return "";
+	}
+	
+	public void downloadFile (int downloadIndex) {
+		
+	}
+	
+	public void pauseDownload (int downloadIndex) {
+		
+	}
+	
+	public void resumeDownload (int downloadIndex) {
+		
+	}
+	
+	public void cancelDownload (int downloadIndex) {
+		
+	}
+	
+	public void cancelUpload (int uploadIndex) {
+		
+	}
+}
+
+thi is how the ui 	while (it.hasNext()) {
+				String temp = (String)it.next();
+				feedBack = (index++)+" "+temp+" 
+"+map.get(temp);					
+			}
+			return feedBack;
+		} catch (RequestIDDoesntExistException e) {
+			System.out.println(e);
+		}
+		return "";
+	}
+	
+	public void search(String fileName) {
+		
+	}
+	
+	public String listUploads () {
+		return "";
+	}
+	
+	public String listDownloads () {
+		return "";
+	}
+	
+	public void downloadFile (int downloadIndex) {
+		
+	}
+	
+	public void pauseDownload (int downloadIndex) {
+		
+	}
+	
+	public void resumeDownload (int downloadIndex) {
+		
+	}
+	
+	public void cancelDownload (int downloadIndex) {
+		
+	}
+	
+	public void cancelUpload (int uploadIndex) {
+		
+	}
+}
+
+thi is how the ui 	while (it.hasNext()) {
+				String temp = (String)it.next();
+				feedBack = (index++)+" "+temp+" 
+"+map.get(temp);					
+			}
+			return feedBack;
+		} catch (RequestIDDoesntExistException e) {
+			System.out.println(e);
+		}
+		return "";
+	}
+	
+	public void search(String fileName) {
+		
+	}
+	
+	public String listUploads () {
+		return "";
+	}
+	
+	public String listDownloads () {
+		return "";
+	}
+	
+	public void downloadFile (int downloadIndex) {
+		
+	}
+	
+	public void pauseDownload (int downloadIndex) {
+		
+	}
+	
+	public void resumeDownload (int downloadIndex) {
+		
+	}
+	
+	public void cancelDownload (int downloadIndex) {
+		
+	}
+	
+	public void cancelUpload (int uploadIndex) {
+		
+	}
+}
+
+thi is how the ui 	while (it.hasNext()) {
+				String temp = (String)it.next();
+				feedBack = (index++)+" "+temp+" 
+"+map.get(temp);					
+			}
+			return feedBack;
+		} catch (RequestIDDoesntExistException e) {
+			System.out.println(e);
+		}
+		return "";
+	}
+	
+	public void search(String fileName) {
+		
+	}
+	
+	public String listUploads () {
+		return "";
+	}
+	
+	public String listDownloads () {
+		return "";
+	}
+	
+	public void downloadFile (int downloadIndex) {
+		
+	}
+	
+	public void pauseDownload (int downloadIndex) {
+		
+	}
+	
+	public void resumeDownload (int downloadIndex) {
+		
+	}
+	
+	public void cancelDownload (int downloadIndex) {
+		
+	}
+	
+	public void cancelUpload (int uploadIndex) {
+		
+	}
+}
+
+thi is how the ui 	while (it.hasNext()) {
+				String temp = (String)it.next();
+				feedBack = (index++)+" "+temp+" 
+"+map.get(temp);					
+			}
+			return feedBack;
+		} catch (RequestIDDoesntExistException e) {
+			System.out.println(e);
+		}
+		return "";
+	}
+	
+	public void search(String fileName) {
+		
+	}
+	
+	public String listUploads () {
+		return "";
+	}
+	
+	public String listDownloads () {
+		return "";
+	}
+	
+	public void downloadFile (int downloadIndex) {
+		
+	}
+	
+	public void pauseDownload (int downloadIndex) {
+		
+	}
+	
+	public void resumeDownload (int downloadIndex) {
+		
+	}
+	
+	public void cancelDownload (int downloadIndex) {
+		
+	}
+	
+	public void cancelUpload (int uploadIndex) {
+		
+	}
+}
+
+thi is how the ui 	while (it.hasNext()) {
+				String temp = (String)it.next();
+				feedBack = (index++)+" "+temp+" 
+"+map.get(temp);					
+			}
+			return feedBack;
+		} catch (RequestIDDoesntExistException e) {
+			System.out.println(e);
+		}
+		return "";
+	}
+	
+	public void search(String fileName) {
+		
+	}
+	
+	public String listUploads () {
+		return "";
+	}
+	
+	public String listDownloads () {
+		return "";
+	}
+	
+	public void downloadFile (int downloadIndex) {
+		
+	}
+	
+	public void pauseDownload (int downloadIndex) {
+		
+	}
+	
+	public void resumeDownload (int downloadIndex) {
+		
+	}
+	
+	public void cancelDownload (int downloadIndex) {
+		
+	}
+	
+	public void cancelUpload (int uploadIndex) {
+		
+	}
+}
+
+thi is how the ui 	while (it.hasNext()) {
+				String temp = (String)it.next();
+				feedBack = (index++)+" "+temp+" 
+"+map.get(temp);					
+			}
+			return feedBack;
+		} catch (RequestIDDoesntExistException e) {
+			System.out.println(e);
+		}
+		return "";
+	}
+	
+	public void search(String fileName) {
+		
+	}
+	
+	public String listUploads () {
+		return "";
+	}
+	
+	public String listDownloads () {
+		return "";
+	}
+	
+	public void downloadFile (int downloadIndex) {
+		
+	}
+	
+	public void pauseDownload (int downloadIndex) {
+		
+	}
+	
+	public void resumeDownload (int downloadIndex) {
+		
+	}
+	
+	public void cancelDownload (int downloadIndex) {
+		
+	}
+	
+	public void cancelUpload (int uploadIndex) {
+		
+	}
+}
+
+thi is how the ui 	while (it.hasNext()) {
+				String temp = (String)it.next();
+				feedBack = (index++)+" "+temp+" 
+"+map.get(temp);					
+			}
+			return feedBack;
+		} catch (RequestIDDoesntExistException e) {
+			System.out.println(e);
+		}
+		return "";
+	}
+	
+	public void search(String fileName) {
+		
+	}
+	
+	public String listUploads () {
+		return "";
+	}
+	
+	public String listDownloads () {
+		return "";
+	}
+	
+	public void downloadFile (int downloadIndex) {
+		
+	}
+	
+	public void pauseDownload (int downloadIndex) {
+		
+	}
+	
+	public void resumeDownload (int downloadIndex) {
+		
+	}
+	
+	public void cancelDownload (int downloadIndex) {
+		
+	}
+	
+	public void cancelUpload (int uploadIndex) {
+		
+	}
+}
+
+thi is how the ui 	while (it.hasNext()) {
+				String temp = (String)it.next();
+				feedBack = (index++)+" "+temp+" 
+"+map.get(temp);					
+			}
+			return feedBack;
+		} catch (RequestIDDoesntExistException e) {
+			System.out.println(e);
+		}
+		return "";
+	}
+	
+	public void search(String fileName) {
+		
+	}
+	
+	public String listUploads () {
+		return "";
+	}
+	
+	public String listDownloads () {
+		return "";
+	}
+	
+	public void downloadFile (int downloadIndex) {
+		
+	}
+	
+	public void pauseDownload (int downloadIndex) {
+		
+	}
+	
+	public void resumeDownload (int downloadIndex) {
+		
+	}
+	
+	public void cancelDownload (int downloadIndex) {
+		
+	}
+	
+	public void cancelUpload (int uploadIndex) {
+		
+	}
+}
+
+thi is how the ui translator used to look like! LALA!
+FINAL

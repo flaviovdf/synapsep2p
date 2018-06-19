@@ -1,0 +1,93 @@
+#!/bin/bash
+
+# Looks for the root dir
+
+findsynapsedir() {
+
+	PRG="$0"
+
+	while [ -h "$PRG" ]; do
+		ls=`ls -ld "$PRG"`
+		link=`expr "$ls" : '.*-> \(.*\)$'`
+		if expr "$link" : '.*/.*' > /dev/null; then
+			PRG="$link"
+		else
+			PRG=`dirname "$PRG"`/"$link"
+		fi
+	done
+	
+	PRGDIR=`dirname "$PRG"`
+	SYNAPSE_DIR=`cd "$PRGDIR/.." ; pwd`
+}
+
+# Reads the command
+
+COMMAND=$1
+COMMAND2=$2
+
+# Start Routine
+
+start() {
+	java -DSYNAPSE_DIR=$SYNAPSE_DIR -cp $SYNAPSE_DIR/classes:$SYNAPSE_DIR/lib/yal.jar synapse.server.ui.Main &
+}
+
+# Stop Routine
+
+stop() {
+	java -DSYNAPSE_DIR=$SYNAPSE_DIR -cp $SYNAPSE_DIR/classes synapse.server.ui.ServerStopper
+}
+
+# Status Routine
+
+status() {
+	java -DSYNAPSE_DIR=$SYNAPSE_DIR -cp $SYNAPSE_DIR/classes synapse.server.ui.ServerStatus
+}
+
+# Linker Routine
+
+link() {
+	java -DSYNAPSE_DIR=$SYNAPSE_DIR -cp $SYNAPSE_DIR/classes synapse.server.ui.ServerLinker $COMMAND2
+}
+
+# Usage commands
+
+usage_commands(){
+
+	echo
+	echo "SERVER commands are:"
+	echo "	start		Starts the Synapse Server"
+	echo "	stop		Stops the Synapse Server"
+	echo "	status		Shows current server status"
+	echo "	link		Integrates this server to another one"
+	echo
+	echo "	help		This help! :)"
+	echo
+}
+
+# Execute
+
+findsynapsedir
+
+case "$COMMAND" in
+	start)
+		start
+		sleep 2
+		;;
+	stop)
+		stop
+		;;
+	status)
+		status
+		;;
+	link)
+		link
+		;;
+	help)
+		usage_commands
+		;;
+	*)
+		echo
+		echo "server: Unknown command '$COMMAND'"
+		usage_commands
+		;;
+esac

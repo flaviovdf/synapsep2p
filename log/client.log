@@ -1,0 +1,8 @@
+[2006/8/11 22:46:26:703] INFO synapse.client.manager.DownloadManager.close() ===> Closing the DownloadManager.
+[2006/8/11 22:46:26:703] INFO synapse.client.manager.DownloadManager.pauseAll() ===> Changing all the Download's status to PAUSED.
+[2006/8/11 22:46:26:703] INFO synapse.client.manager.DownloadManager.update() ===> The method was called by: aebf46b6c055787881b63e18867959cb
+[2006/8/11 22:46:26:703] INFO synapse.client.manager.SimpleDownload.pause() ===> The Download's status was changed to PAUSED.
+[2006/8/11 22:46:26:703] INFO synapse.client.manager.DownloadManager.close() ===> Closing the DownloadManager.
+[2006/8/11 22:46:26:718] INFO synapse.client.manager.DownloadManager.pauseAll() ===> Changing all the Download's status to PAUSED.
+[2006/8/11 22:46:26:718] INFO synapse.client.manager.DownloadManager.update() ===> The method was called by: aebf46b6c055787881b63e18867959cb
+[2006/8/11 22:46:26:718] INFO synapse.client.manager.SimpleDownload.pause() ===> The Download's status was changed to PAUSED.
